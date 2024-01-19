@@ -40,16 +40,28 @@
   }
 }
 
+.shadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 /* Hero */
-.circle {
+.circle-pink {
   width: 700px;
   height: 700px;
   border-radius: 30%;
   position: absolute;
-  /* top: -40%;
-  left: -15%; */
   transform: rotate(50deg);
   background: rgb(255,211,198);
   background: linear-gradient(90deg, rgba(255,211,198,1) 0%, rgba(255,87,34,0.19380252100840334) 22%, rgba(255,255,255,0) 100%);
 
+}
+
+.circle-yellow {
+  width: 600px;
+  height: 600px;
+  border-radius: 40%;
+  position: absolute;
+  transform: rotate(-120deg);
+  background: rgb(255,242,201);
+  background: linear-gradient(50deg, rgba(255,242,201,1) 0%, rgba(255,255,255,0) 100%);
 }

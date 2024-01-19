@@ -4,19 +4,19 @@ import Button from './Button'
 
 const Hero = () => {
   return (
-    <section className='relative max-container padding-container py-20 sm:gap-32 gap-0 flex flex-col xl:flex-row'>
-      <div className='bg-hero h-screen w-screen sm:top-[45%] sm:right-[5%] xl:top-[0] xl:right-[-22%]'/>
+    <section className='relative max-container padding-container py-28 sm:gap-32 gap-0 flex flex-col xl:flex-row'>
+      <div className='bg-hero h-screen w-screen sm:top-[45%] sm:right-[5%] xl:top-[5%] xl:right-[-24%]'/>
       
       {/* LEFT  */}
       <div className='relative z-2 flex flex-1 flex-col gap-8 xl:w-2/5'>
-        <div className='flex gap-2 bg-white w-56 text-[#F85E9F] rounded-3xl py-3 px-6'>
+        <div className='flex shadow gap-2 bg-white w-56 text-[#F85E9F] rounded-3xl py-3 px-6'>
           <p className='font-semibold'>Explore the world!</p>
           <Image src='/icon1.png' alt='icon' width={20} height={20} />
         </div>
         <h1 className='text-8xl font-semibold'>Travel <span className='text-[#F85E9F]'>top destination </span>of the world</h1>
         <p className='text-[#191825] text-opacity-50 text-xl'>We always make our customer happy by providing as many choices as possible </p>
         <div className='btn-container flex gap-4'>
-          <Button type='button' title='Get Started' variant='btn_purple' />
+          <Button type='button' title='Get Started' variant='btn_purple shadow' />
           <Button type='button' title='Watch Demo' variant='btn_outline_black' icon='/play-circle.png' />
         </div>
       </div>
@@ -26,7 +26,7 @@ const Hero = () => {
         <Image src='/frame.png' alt='frame' width={500} height={25} className='h-full w-auto'/>          
         <Image className='absolute sm:left-[0] md:left-[15%] lg:left-[22%] xl:left-[5%] top-[42%]' src='/icon-place.png' alt='icon place' width={60} height={60} />
         <Image className='absolute right-[30%] top-[90%]' src='/icon-people.png' alt='icon people' width={60} height={60} />
-        <div className='absolute left-[75%] top-[65%] flex gap-2 bg-white rounded-3xl py-3 px-6'>
+        <div className='absolute shadow left-[75%] top-[65%] flex gap-2 bg-white rounded-3xl py-3 px-6'>
           <Image src='/location.png' alt='location' width={20} height={20} />
           <p className='font-semibold'>Top Places</p>
         </div> 
