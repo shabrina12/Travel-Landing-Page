@@ -2,26 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer utilities {
+  .max-container {
+    @apply mx-auto max-w-[1440px];
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .padding-container {
+    @apply px-8;
+  }
+
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
+
+  .btn_purple {
+    @apply bg-[#5D50C6] px-8 py-3 text-white transition-all hover:bg-opacity-50
+  }
+
+  .btn_outline_black {
+    @apply border-black border-opacity-20 px-4 py-3
+  }
+
+  .btn_white {
+    @apply border-none px-4 py-3
+  }
+
+  .bold-16 {
+    @apply text-[16px] font-[600];
+  }
+
+  .bg-hero {
+    background-image: url('/earth.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    right: -25%;
+    position: absolute;
+    /*@apply absolute right-0 top-0 h-screen w-screen bg-cover bg-center md:right-[-15%] xl:top-[-10%];*/
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Hero */
+.circle {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgb(255,87,34);
+  background: radial-gradient(circle, rgba(255,87,34,0.19380252100840334) 0%, rgba(255,255,255,0) 100%);
 }
