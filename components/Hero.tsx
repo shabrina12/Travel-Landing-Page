@@ -4,13 +4,13 @@ import Button from './Button'
 
 const Hero = () => {
   return (
-    <section className=' relative max-container padding-container py-20 sm:gap-8 gap-0 flex flex-col lg:flex-row'>
-      <div className='bg-hero h-screen w-screen sm:top-[35%] lg:top-[3%]'/>
+    <section className='relative max-container padding-container py-20 sm:gap-8 gap-0 flex flex-col lg:flex-row'>
+      <div className='bg-hero h-screen w-screen sm:top-[35%] lg:top-[1%]'/>
       
       {/* LEFT  */}
       <div className='relative z-2 flex flex-1 flex-col gap-8 lg:w-2/5'>
-        <div className='flex gap-2 bg-white w-52 text-[#F85E9F] rounded-3xl py-3 px-6'>
-          <p>Explore the world!</p>
+        <div className='flex gap-2 bg-white w-56 text-[#F85E9F] rounded-3xl py-3 px-6'>
+          <p className='font-semibold'>Explore the world!</p>
           <Image src='/icon1.png' alt='icon' width={20} height={20} />
         </div>
         <h1 className='text-8xl font-semibold'>Travel <span className='text-[#F85E9F]'>top destination </span>of the world</h1>
@@ -23,11 +23,8 @@ const Hero = () => {
 
       {/* RIGHT */}
       <div className='relative lg:w-3/5 flexCenter flex-1'>
-          {/* <div className='w-full h-full relative z-1'>
-            <Image src='/frame.png' alt='frame' layout='fill' objectFit='contain' />
-          </div>       */}
-          <Image src='/frame.png' alt='frame' width={500} height={25} className='h-full w-auto'/>          
-        </div>
+        <Image src='/frame.png' alt='frame' width={500} height={25} className='h-full w-auto'/>          
+      </div>
     </section>
   )
 }
