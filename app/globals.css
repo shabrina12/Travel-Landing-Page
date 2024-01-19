@@ -35,7 +35,6 @@
     background-image: url('/earth.png');
     background-repeat: no-repeat;
     background-position: top;
-    right: -25%;
     position: absolute;
     /*@apply absolute right-0 top-0 h-screen w-screen bg-cover bg-center md:right-[-15%] xl:top-[-10%];*/
   }

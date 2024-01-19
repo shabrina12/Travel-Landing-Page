@@ -4,11 +4,11 @@ import Button from './Button'
 
 const Hero = () => {
   return (
-    <section className='relative max-container padding-container py-20 sm:gap-8 gap-0 flex flex-col lg:flex-row'>
-      <div className='bg-hero h-screen w-screen sm:top-[35%] lg:top-[1%]'/>
+    <section className='relative max-container padding-container py-20 sm:gap-32 gap-0 flex flex-col xl:flex-row'>
+      <div className='bg-hero h-screen w-screen sm:top-[45%] sm:right-[5%] xl:top-[0] xl:right-[-22%]'/>
       
       {/* LEFT  */}
-      <div className='relative z-2 flex flex-1 flex-col gap-8 lg:w-2/5'>
+      <div className='relative z-2 flex flex-1 flex-col gap-8 xl:w-2/5'>
         <div className='flex gap-2 bg-white w-56 text-[#F85E9F] rounded-3xl py-3 px-6'>
           <p className='font-semibold'>Explore the world!</p>
           <Image src='/icon1.png' alt='icon' width={20} height={20} />
@@ -22,8 +22,14 @@ const Hero = () => {
       </div>
 
       {/* RIGHT */}
-      <div className='relative lg:w-3/5 flexCenter flex-1'>
+      <div className='relative z-1 xl:w-3/5 flexCenter first-line:flex-1'>
         <Image src='/frame.png' alt='frame' width={500} height={25} className='h-full w-auto'/>          
+        <Image className='absolute sm:left-[0] md:left-[15%] lg:left-[22%] xl:left-[5%] top-[42%]' src='/icon-place.png' alt='icon place' width={60} height={60} />
+        <Image className='absolute right-[30%] top-[90%]' src='/icon-people.png' alt='icon people' width={60} height={60} />
+        <div className='absolute left-[75%] top-[65%] flex gap-2 bg-white rounded-3xl py-3 px-6'>
+          <Image src='/location.png' alt='location' width={20} height={20} />
+          <p className='font-semibold'>Top Places</p>
+        </div> 
       </div>
     </section>
   )
