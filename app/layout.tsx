@@ -19,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <div className='circle h-screen w-screen lg:top-[-40%] lg:left-[-15%;] md:left-[-20%;] sm:top-[-50%] sm:left-[-25%]'/>
         <Navbar />
         <main className='relative overflow-hidden'>
           {children}

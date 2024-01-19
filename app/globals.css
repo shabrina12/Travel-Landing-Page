@@ -43,9 +43,14 @@
 
 /* Hero */
 .circle {
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: rgb(255,87,34);
-  background: radial-gradient(circle, rgba(255,87,34,0.19380252100840334) 0%, rgba(255,255,255,0) 100%);
+  width: 700px;
+  height: 700px;
+  border-radius: 30%;
+  position: absolute;
+  /* top: -40%;
+  left: -15%; */
+  transform: rotate(50deg);
+  background: rgb(255,211,198);
+  background: linear-gradient(90deg, rgba(255,211,198,1) 0%, rgba(255,87,34,0.19380252100840334) 22%, rgba(255,255,255,0) 100%);
+
 }
