@@ -19,6 +19,10 @@
     @apply text-[#F85E9F]
   }
 
+  .text_orange {
+    @apply text-[#FF5722]
+  }
+
   .text_black {
     @apply text-[#191825]
   }
@@ -53,7 +57,7 @@
 }
 
 .shadow-2 {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 /* Hero */
@@ -76,6 +80,10 @@
   transform: rotate(-120deg);
   background: rgb(255,242,201);
   background: linear-gradient(50deg, rgba(255,242,201,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #5D50C6 !important;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
