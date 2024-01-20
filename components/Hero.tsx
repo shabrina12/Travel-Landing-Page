@@ -9,7 +9,7 @@ const Hero = () => {
       
       {/* LEFT  */}
       <div className='relative z-2 flex flex-1 flex-col gap-8 xl:w-2/5'>
-        <div className='flex shadow gap-2 bg-white w-56 text-[#F85E9F] rounded-3xl py-3 px-6'>
+        <div className='flex shadow gap-2 bg-white w-[215px] text-[#F85E9F] rounded-3xl py-3 px-6'>
           <p className='font-semibold'>Explore the world!</p>
           <Image src='/icon1.png' alt='icon' width={20} height={20} />
         </div>
