@@ -5,7 +5,7 @@ import Button from './Button'
 const Hero = () => {
   return (
     <section className='relative max-container padding-container xs:py-12 sm:py-28 xs:gap-16 sm:gap-32 gap-0 flex flex-col xl:flex-row'>
-      <div className='bg-hero h-screen w-screen xs:right-[5%] xs:top-[45%] sm:right-[5%] xl:top-[5%] xl:right-[-24%]'/>
+      <div className='bg-hero h-screen w-screen xs:right-[5%] xs:top-[45%] sm:right-[5%] xl:top-[4%] xl:right-[-20%]'/>
       
       {/* LEFT  */}
       <div className='relative z-2 flex flex-1 flex-col gap-8 xl:w-2/5'>
@@ -13,7 +13,7 @@ const Hero = () => {
           <p className='font-semibold'>Explore the world!</p>
           <Image src='/icon1.png' alt='icon' width={20} height={20} />
         </div>
-        <h1 className='sm:text-8xl xs:text-6xl font-semibold'>Travel <span className='text-[#F85E9F]'>top destination </span>of the world</h1>
+        <h1 className='sm:text-7xl xs:text-6xl font-semibold'>Travel <span className='text-[#F85E9F]'>top destination </span>of the world</h1>
         <p className='text-[#191825] text-opacity-50 text-xl'>We always make our customer happy by providing as many choices as possible </p>
         <div className='btn-container flex gap-4'>
           <Button type='button' title='Get Started' variant='btn_purple shadow' />
