@@ -56,7 +56,7 @@ Coming soon
 
 ### Useful resources
 - [UI/UX Design Resources](https://ui8.net/) - This website provide many UI/UX design, some are even free.
-- [Build and Deploy a Fully Responsive Modern UI/UX Website | React.js, Next.js 13, Tailwind CSS by JavaScript Mastery](https://www.youtube.com/watch?v=cuzw4vL1z5E&list=PLX3rE0SL_PjHPmNDA1PVfR7_22pzEuW5T&index=13&t=3479s&ab_channel=JavaScriptMastery) - This youtube tutorial really helps in understanding Next js and the use of sanity and stripe for e-commerce
+- [Build and Deploy a Fully Responsive Modern UI/UX Website | React.js, Next.js 13, Tailwind CSS by JavaScript Mastery](https://www.youtube.com/watch?v=cuzw4vL1z5E&list=PLX3rE0SL_PjHPmNDA1PVfR7_22pzEuW5T&index=13&t=3479s&ab_channel=JavaScriptMastery) 
 - [Swiper React Components](https://swiperjs.com/react#styles)
 
 ## Acknowledgments
