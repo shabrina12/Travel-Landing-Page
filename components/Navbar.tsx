@@ -31,9 +31,11 @@ const Navbar = () => {
             {navbarOpen ? 
                 <ul className='lg:hidden sm:block flex flex-col'>
                     {NAV_LINKS.map((link) => (
-                        <Link href={link.href} key={link.key} className="flexCenter cursor-pointer pb-2 transition-all hover:font-bold">
-                            {link.label}
-                        </Link>
+                        <li className="flexCenter cursor-pointer pb-2 transition-all hover:font-bold">
+                            <Link href={link.href} key={link.key}>
+                                {link.label}
+                            </Link> 
+                        </li>
                     ))}
                 </ul>
                 : null

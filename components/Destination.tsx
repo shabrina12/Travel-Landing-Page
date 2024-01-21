@@ -16,7 +16,7 @@ const Destination = () => {
       <Image className='absolute xs:bottom-[65%] xs:right-[5%] md:bottom-[70%] xl:right-0' src='/yellowx.png' alt='yellow object' width={100} height={100} />
 
       <div className='top'>
-        <Title title='top destination' firstLine='Explore top destination' />
+        <Title title='top destination' subtitle='Explore top destination' />
       </div>
 
       <div className='bottom flex items-center justify-between'>

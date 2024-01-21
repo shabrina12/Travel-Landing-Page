@@ -6,7 +6,7 @@ const Services = () => {
   return (
     <section className='relative max-container padding-container flex md:flex-row xs:flex-col py-10 md:h-[420px] xs:h-full gap-8'>
       <div className='left xs:w-full md:w-2/5 py-4 flex flex-col justify-center'>
-        <Title title='services' firstLine='Our top value' secondLine='categories for you' />
+        <Title title='services' subtitle='Our top value categories for you' />
       </div>
 
       <div className='right xs:w-full md:w-3/5 py-4 px-4 flex gap-8 items-start hide-scrollbar overflow-x-auto'>
