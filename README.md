@@ -1,5 +1,5 @@
 # Front End Travel Landing Page
-This project (still on going) is a front end travel page built with NextJS & typescript. I created this project as an exercise to develop my front end skills.
+It's been a long time since I get my hands on front end, lately I've been surrounded with javascript and C# which made me forget about front end. So here's a simple landing page I created for fun (still on going). This project is build with NextJS & typescript.
 
 ## Table of contents
 
