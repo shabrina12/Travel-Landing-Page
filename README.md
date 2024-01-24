@@ -14,6 +14,7 @@ It's been a long time since I get my hands on front end, lately I've been surrou
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Acknowledgments](#acknowledgments)
+- [Author](#author)
 - [Getting Started](#getting-started)
 
 
@@ -62,6 +63,8 @@ Coming soon
 ## Acknowledgments
 Coming soon
 
+## Author
+Github - [Shabrina Putri](https://github.com/shabrina12)
 
 ## 🤸 Getting Started
 
