@@ -50,6 +50,18 @@
     position: absolute;
     /*@apply absolute right-0 top-0 h-screen w-screen bg-cover bg-center md:right-[-15%] xl:top-[-10%];*/
   }
+
+  .bg-testimonial {
+    background: url('/bg-testimonial.png') no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
+.newsletter {
+  letter-spacing: 3px;
 }
 
 .shadow {
