@@ -4,7 +4,9 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className='max-container padding-container py-20 flex xs:gap-12 lg:gap-20 xs:flex-col lg:flex-row'>
+    <footer className='relative max-container padding-container py-36 flex xs:gap-12 lg:gap-20 xs:flex-col lg:flex-row'>
+      <Image className='absolute right-[-4%] xs:top-0 lg:top-[-20%] ' src='/footer-object.png' alt='object' width={100} height={100} />
+
       <div className='flex flex-col gap-12 lg:w-1/3'>
         {/* LOGO & TEXT */}
         <div className='flex flex-col gap-4'>
