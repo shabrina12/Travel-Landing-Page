@@ -59,6 +59,7 @@ Coming soon
 - [UI/UX Design Resources](https://ui8.net/) - This website provide many UI/UX design, some are even free.
 - [Build and Deploy a Fully Responsive Modern UI/UX Website | React.js, Next.js 13, Tailwind CSS by JavaScript Mastery](https://www.youtube.com/watch?v=cuzw4vL1z5E&list=PLX3rE0SL_PjHPmNDA1PVfR7_22pzEuW5T&index=13&t=3479s&ab_channel=JavaScriptMastery) 
 - [Swiper React Components](https://swiperjs.com/react#styles)
+- [Flowbite](https://www.flowbite-react.com/docs/components/carousel)
 
 ## Acknowledgments
 Coming soon
