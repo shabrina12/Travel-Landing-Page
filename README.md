@@ -48,8 +48,8 @@ It's been a long time since I get my hands on front end, lately I've been surrou
 - [swiper js](https://swiperjs.com/) - JS library to add slider component
 
 ### What I learned
-
-Coming soon
+I found creating this section and making it responsive was not easy and took a lot of time, but I am quite satisfied with the result
+![Travel point section](./public/travel-point-section.png)
 
 ### Continued development
 Coming soon
