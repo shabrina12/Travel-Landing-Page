@@ -13,7 +13,6 @@ It's been a long time since I get my hands on front end, lately I've been surrou
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
-- [Acknowledgments](#acknowledgments)
 - [Author](#author)
 - [Getting Started](#getting-started)
 
@@ -30,7 +29,7 @@ It's been a long time since I get my hands on front end, lately I've been surrou
 ![Design overview for Travel Page](./public/header-travlog.png)
 
 ### Links
-Coming soon
+[Live Site URL](https://travlog-landing-page-zeta.vercel.app/)
 
 ### Credit
 [Figma Web Design & UI kit i used for this project](https://www.figma.com/file/5faP92Sa9LBCqmtwIcvVIk/Landing-Page-UI-Design-in-Figma-(Community)?type=design&t=d4D5mlw01KLHlElv-6)
@@ -60,9 +59,6 @@ Coming soon
 - [Build and Deploy a Fully Responsive Modern UI/UX Website | React.js, Next.js 13, Tailwind CSS by JavaScript Mastery](https://www.youtube.com/watch?v=cuzw4vL1z5E&list=PLX3rE0SL_PjHPmNDA1PVfR7_22pzEuW5T&index=13&t=3479s&ab_channel=JavaScriptMastery) 
 - [Swiper React Components](https://swiperjs.com/react#styles)
 - [Flowbite](https://www.flowbite-react.com/docs/components/carousel)
-
-## Acknowledgments
-Coming soon
 
 ## Author
 Github - [Shabrina Putri](https://github.com/shabrina12)
