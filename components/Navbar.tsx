@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { NAV_LINKS } from '@/constants'
@@ -9,8 +9,23 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 120) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
   return (
-    <nav className='max-container padding-container flex justify-between py-8'>
+    <nav className={scrolling ? 'navbar-scroll max-container padding-container flex justify-between py-8 fixed z-40' : 'max-container padding-container flex justify-between py-8'}>
         <div className='left'>
             <Link href='/' className='flexCenter gap-2'>
                 <Image src='/travlog_logo.svg' alt='logo' width={40} height={40}/>

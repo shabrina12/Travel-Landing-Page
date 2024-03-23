@@ -4,7 +4,7 @@
 
 @layer utilities {
   .max-container {
-    @apply mx-auto max-w-[1440px];
+    @apply mx-auto max-w-full;
   }
 
   .padding-container {
@@ -13,6 +13,11 @@
 
   .flexCenter {
     @apply flex items-center justify-center;
+  }
+
+  .navbar-scroll {
+    background: rgba(255,255,255, 0.9); /* Set your desired background color */
+    width: 100vw;
   }
 
   .text_pink {
@@ -26,6 +31,8 @@
   .text_black {
     @apply text-[#191825]
   }
+
+
 
   .btn_purple {
     @apply bg-[#5D50C6] px-8 py-3 text-white transition-all hover:bg-opacity-50
