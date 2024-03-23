@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={scrolling ? 'navbar-scroll max-container padding-container flex justify-between py-8 fixed z-40' : 'max-container padding-container flex justify-between py-8'}>
+    <nav className={scrolling ? 'navbar-scroll max-container padding-container flex justify-between py-8 fixed z-50' : 'max-container padding-container flex justify-between py-8'}>
         <div className='left'>
             <Link href='/' className='flexCenter gap-2'>
                 <Image src='/travlog_logo.svg' alt='logo' width={40} height={40}/>
