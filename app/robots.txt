@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://keralatour.info/sitemap.xml
+
+# Sitemaps
+Sitemap: https://keralatour.info/sitemap.xml
+Sitemap: https://keralatour.info/sitemap-packages.xml

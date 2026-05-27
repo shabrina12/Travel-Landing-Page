@@ -1,35 +1,107 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import Button from './Button'
+import { CONTACT_INFO, TOUR_PACKAGES } from '@/constants'
+import type { CMSTourPackage, CMSImage } from '@/lib/types'
 
-const Hero = () => {
+interface HeroProps {
+  cmsData?: {
+    title?: string
+    subtitle?: string
+    exploreText?: string
+    heroImage?: CMSImage
+  }
+  packages?: typeof TOUR_PACKAGES
+  title?: string
+  subtitle?: string
+  exploreText?: string
+}
+
+const Hero = ({ 
+  cmsData,
+  packages,
+  title: propsTitle, 
+  subtitle: propsSubtitle, 
+  exploreText: propsExploreText 
+}: HeroProps) => {
+  // For backward compatibility - packages can be passed but currently not used in Hero
+  const _ = packages
+  // Use CMS data if provided, otherwise fall back to props or defaults
+  const title = cmsData?.title || propsTitle || 'Kerala Tour'
+  const subtitle = cmsData?.subtitle || propsSubtitle || "Embark on a journey of a lifetime with us as we unveil the hidden gems & breathtaking landscapes of God's Own Country."
+  const exploreText = cmsData?.exploreText || propsExploreText || 'Explore Kerala & South India!'
+  const heroImage = cmsData?.heroImage
+
   return (
-    <section className='relative max-container padding-container xs:py-12 sm:py-28 xs:gap-16 sm:gap-32 gap-0 flex flex-col xl:flex-row'>
-      <div className='bg-hero h-screen w-screen xs:right-[5%] xs:top-[45%] sm:right-[5%] xl:top-[4%] xl:right-[-20%]'/>
+    <section className='relative max-container padding-container py-16 lg:py-24 flex items-center'>
+      {/* Background decoration */}
+      <div className='absolute inset-0 bg-hero opacity-30 pointer-events-none' />
       
-      {/* LEFT  */}
-      <div className='relative z-2 flex flex-1 flex-col gap-8 xl:w-2/5'>
-        <div className='flex shadow gap-2 bg-white w-[215px] text-[#F85E9F] rounded-3xl py-3 px-6'>
-          <p className='font-semibold'>Explore the world!</p>
-          <Image src='/icon1.png' alt='icon' width={20} height={20} />
-        </div>
-        <h1 className='sm:text-7xl xs:text-6xl font-semibold'>Travel <span className='text-[#F85E9F]'>top destination </span>of the world</h1>
-        <p className='text-[#191825] text-opacity-50 text-xl'>We always make our customer happy by providing as many choices as possible </p>
-        <div className='btn-container flex gap-4'>
-          <Button type='button' title='Get Started' variant='btn_purple shadow' />
-          <Button type='button' title='Watch Demo' variant='btn_outline_black' icon='/play-circle.png' />
-        </div>
-      </div>
+      <div className='relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
+        {/* LEFT - Content */}
+        <div className='flex flex-col gap-6 text-center lg:text-left order-2 lg:order-1'>
+          <div className='inline-flex self-center lg:self-start items-center gap-2 bg-white shadow-md w-fit text-[#F85E9F] rounded-full py-3 px-6'>
+            <Image src='/icon1.png' alt='icon' width={16} height={16} className='w-4 h-4' />
+            <p className='font-semibold text-sm'>{exploreText}</p>
+          </div>
+          
+          <h1 className='text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight'>
+            {title} <span className='text-[#F85E9F]'>Packages</span>
+          </h1>
+          
+          <p className='text-[#191825]/60 text-lg lg:text-xl max-w-xl mx-auto lg:mx-0'>
+            {subtitle}
+          </p>
+          
+          <div className='flex flex-wrap justify-center lg:justify-start gap-4'>
+            <a href='#packages'>
+              <Button type='button' title='Explore Packages' variant='btn_purple shadow' />
+            </a>
+            <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`}>
+              <Button type='button' title={CONTACT_INFO.phone} variant='btn_outline_black' icon='/phone.png' />
+            </a>
+          </div>
 
-      {/* RIGHT */}
-      <div className='relative z-1 xl:w-3/5 flexCenter first-line:flex-1'>
-        <Image src='/frame.png' alt='frame' width={500} height={25} className='h-full w-auto'/>          
-        <Image className='absolute xs:left-[-5%] sm:left-[0%] md:left-[10%] lg:left-[20%] xl:left-[10%] top-[42%]' src='/icon-place.png' alt='icon place' width={50} height={50} />
-        <Image className='absolute md:right-[30%] xs:right-[15%] xs:top-[90%]' src='/icon-people.png' alt='icon people' width={50} height={50} />
-        <div className='absolute shadow sm:left-[75%] sm:top-[65%] xs:top-[50%] xs:left-[85%] flex sm:flex-row xs:flex-col xs:flexCenter xs:text-center gap-2 bg-white rounded-3xl py-3 px-6'>
-          <Image src='/location.png' alt='location' width={20} height={20} />
-          <p className='font-semibold'>Top Places</p>
-        </div> 
+          {/* Quick Stats */}
+          <div className='flex justify-center lg:justify-start gap-8 pt-4'>
+            <div className='text-center'>
+              <p className='text-3xl font-bold text-[#5D50C6]'>20+</p>
+              <p className='text-sm opacity-60'>Tour Packages</p>
+            </div>
+            <div className='text-center'>
+              <p className='text-3xl font-bold text-[#5D50C6]'>1240+</p>
+              <p className='text-sm opacity-60'>Hotel Deals</p>
+            </div>
+            <div className='text-center'>
+              <p className='text-3xl font-bold text-[#5D50C6]'>5234+</p>
+              <p className='text-sm opacity-60'>Happy Clients</p>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT - Image */}
+        <div className='relative flex items-center justify-center order-1 lg:order-2'>
+          <div className='relative w-full max-w-md lg:max-w-full aspect-square'>
+            <Image 
+              src='/frame.png' 
+              alt='Kerala Tour' 
+              fill
+              className='object-contain'
+              priority
+            />
+            <div className='absolute top-1/4 left-0 md:left-4 bg-white rounded-full py-2 px-4 shadow-lg flex items-center gap-2'>
+              <Image src='/location.png' alt='location' width={16} height={16} className='w-4 h-4' />
+              <p className='font-semibold text-sm whitespace-nowrap'>Top Destinations</p>
+            </div>
+            <div className='absolute bottom-1/3 right-0 md:right-4 bg-white rounded-full p-2 shadow-lg'>
+              <Image src='/icon-place.png' alt='places' width={32} height={32} />
+            </div>
+            <div className='absolute top-1/2 right-4 bg-white rounded-full p-2 shadow-lg hidden md:block'>
+              <Image src='/icon-people.png' alt='people' width={32} height={32} />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

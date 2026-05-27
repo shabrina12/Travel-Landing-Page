@@ -1,41 +1,41 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { NAV_LINKS } from '@/constants'
-import Button from './Button'
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
+import { useLeadPopup } from './LeadPopupForm'
 
-const Navbar = () => {
+interface NavLink {
+  key: string
+  href: string
+  label: string
+}
+
+interface NavbarProps {
+  links?: NavLink[]
+  logoText?: string
+}
+
+const Navbar = ({ 
+  links = NAV_LINKS,
+  logoText = 'Kerala Tour' 
+}: NavbarProps) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-
-  const [scrolling, setScrolling] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleScroll = () => {
-    if (window.scrollY > 120) {
-      setScrolling(true);
-    } else {
-      setScrolling(false);
-    }
-  };
+  const { openPopup } = useLeadPopup();
 
   return (
-    <nav className={scrolling ? 'navbar-scroll max-container padding-container flex justify-between py-8 fixed z-50' : 'max-container padding-container flex justify-between py-8'}>
+    <nav className='max-container padding-container flex justify-between py-8'>
         <div className='left'>
             <Link href='/' className='flexCenter gap-2'>
-                <Image src='/travlog_logo.svg' alt='logo' width={40} height={40}/>
-                <h2 className='font-bold text-lg'>Travlog</h2>
+                <Image src='/logo_bh.svg' alt='logo' width={40} height={40}/>
+                <h2 className='font-bold text-lg'>{logoText}</h2>
             </Link>            
         </div>
 
         <div className='middle'>
             <ul className="hidden h-full gap-12 lg:flex">
-                {NAV_LINKS.map((link) => (
+                {links.map((link) => (
                     <Link href={link.href} key={link.key} className="flexCenter cursor-pointer transition-all hover:font-bold">
                         {link.label}
                     </Link>
@@ -45,9 +45,9 @@ const Navbar = () => {
             {/*-------------- NAVBAR LINKS MOBILE -----------------*/}
             {navbarOpen ? 
                 <ul className='lg:hidden sm:block flex flex-col'>
-                    {NAV_LINKS.map((link) => (
-                        <li className="flexCenter cursor-pointer pb-2 transition-all hover:font-bold">
-                            <Link href={link.href} key={link.key}>
+                    {links.map((link) => (
+                        <li key={link.key} className="flexCenter cursor-pointer pb-2 transition-all hover:font-bold">
+                            <Link href={link.href}>
                                 {link.label}
                             </Link> 
                         </li>
@@ -58,8 +58,9 @@ const Navbar = () => {
         </div>
 
         <div className='right lg:flexCenter hidden gap-4'>
-            <Button type='button' title='Login' variant='btn_white' />
-            <Button type='button' title='Sign Up' variant='btn_purple' />
+            <button onClick={openPopup} className='bg-[#5D50C6] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#4a3fb0] transition-colors'>
+                Get Quote
+            </button>
         </div>         
 
         {/*-------------- MENU ICON MOBILE -----------------*/}

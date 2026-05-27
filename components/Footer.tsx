@@ -1,67 +1,148 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FOOTER_LINKS, FOOTER_CONTACT_INFO, SOCIALS, CONTACT_INFO } from '@/constants'
 
-const Footer = () => {
+interface FooterLinkGroup {
+  title: string
+  links: string[]
+}
+
+interface FooterContactInfo {
+  title: string
+  address: string
+  phone: string
+  email: string
+}
+
+interface ContactInfo {
+  phone: string
+  email: string
+  whatsapp: string
+  address: string
+}
+
+interface FooterProps {
+  footerLinks?: FooterLinkGroup[]
+  contactInfo?: FooterContactInfo
+  contactDetails?: ContactInfo
+  companyName?: string
+}
+
+const Footer = ({ 
+  footerLinks = FOOTER_LINKS,
+  contactInfo = FOOTER_CONTACT_INFO,
+  contactDetails = CONTACT_INFO,
+  companyName = 'Kerala Tour'
+}: FooterProps) => {
   return (
-    <footer className='relative max-container padding-container py-36 flex xs:gap-12 lg:gap-20 xs:flex-col lg:flex-row'>
-      <Image className='absolute right-[-4%] xs:top-0 lg:top-[-20%] ' src='/footer-object.png' alt='object' width={100} height={100} />
-
-      <div className='flex flex-col gap-12 lg:w-1/3'>
+    <footer className='relative max-container padding-container pt-20 pb-10 bg-[#191825] text-white'>
+      <div className='absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#F85E9F] via-[#5D50C6] to-[#FACD49]' />
+      
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16'>
         {/* LOGO & TEXT */}
-        <div className='flex flex-col gap-4'>
-          <div className='logo flex items-center gap-2'>
-            <Image src='/travlog_logo.svg' alt='logo' width={50} height={50} />
-            <h2 className='font-bold text-2xl'>Travlog</h2>
-          </div>
-          <p className='opacity-70'>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-            in a piece of classical Latin literature from 45 BC.
+        <div className='flex flex-col gap-6'>
+          <Link href='/' className='flex items-center gap-3'>
+            <Image src='/logo_bh.svg' alt={companyName} width={50} height={50} />
+            <div>
+              <h2 className='font-bold text-xl'>{companyName}</h2>
+              <p className='text-sm opacity-70'>Information</p>
+            </div>
+          </Link>
+          <p className='opacity-70 leading-relaxed'>
+            At Kerala Tour, we are passionate about crafting unforgettable travel experiences that immerse you in the true essence of Kerala.
           </p>
+
+          {/* SOCIAL MEDIA */}
+          <div className='flex gap-4'>
+            <a href='https://www.facebook.com/keralatour.information' target='_blank' rel='noopener noreferrer' className='w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#5D50C6] transition-colors'>
+              <Image src='/fb.png' alt='Facebook' width={20} height={20} />
+            </a>
+            <a href='https://www.instagram.com/keralatour.info/' target='_blank' rel='noopener noreferrer' className='w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#5D50C6] transition-colors'>
+              <Image src='/instagram.png' alt='Instagram' width={20} height={20} />
+            </a>
+            <a href={`https://api.whatsapp.com/send?phone=${contactDetails.whatsapp}`} target='_blank' rel='noopener noreferrer' className='w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#25D366] transition-colors'>
+              <span className='text-lg'>📱</span>
+            </a>
+          </div>
         </div>
 
-        {/* SOCIAL MEDIA */}
-        <div className='social flex gap-4'>
-          <Link href='/'>
-            <Image src='/fb.png' alt='facebook' width={30} height={30} />
-          </Link>
-          <Link href='/'>
-            <Image src='/twitter.png' alt='twitter'  width={30} height={30} />
-          </Link>
-          <Link href='/'>
-            <Image src='/instagram.png' alt='instagram' width={30} height={30} />
-          </Link>
+        {/* Destinations */}
+        {footerLinks[0] && (
+          <div className='flex flex-col gap-4'>
+            <h3 className='text-xl font-bold'>{footerLinks[0].title}</h3>
+            <ul className='flex flex-col gap-3 mt-4'>
+              <li>
+                <Link href='/' className='opacity-70 hover:opacity-100 transition-opacity'>
+                  Kerala
+                </Link>
+              </li>
+              <li>
+                <Link href='/tamil-nadu' className='opacity-70 hover:opacity-100 transition-opacity'>
+                  Tamil Nadu
+                </Link>
+              </li>
+              <li>
+                <Link href='/karnataka' className='opacity-70 hover:opacity-100 transition-opacity'>
+                  Karnataka
+                </Link>
+              </li>
+              <li>
+                <Link href='/Lakshadweep' className='opacity-70 hover:opacity-100 transition-opacity'>
+                  Lakshadweep
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+
+        {/* Company */}
+        {footerLinks[1] && (
+          <div className='flex flex-col gap-4'>
+            <h3 className='text-xl font-bold'>{footerLinks[1].title}</h3>
+            <ul className='flex flex-col gap-3 mt-4'>
+              {footerLinks[1].links.map((link) => (
+                <li key={link}>
+                  <Link href='/' className='opacity-70 hover:opacity-100 transition-opacity'>
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Contact */}
+        <div className='flex flex-col gap-4'>
+          <h3 className='text-xl font-bold'>{contactInfo.title}</h3>
+          <div className='flex flex-col gap-4 mt-4'>
+            <a href={`tel:${contactInfo.phone.replace(/\s/g, '')}`} className='flex items-start gap-3 opacity-70 hover:opacity-100 transition-opacity'>
+              <span>📞</span>
+              <span>{contactInfo.phone}</span>
+            </a>
+            <a href={`mailto:${contactInfo.email}`} className='flex items-start gap-3 opacity-70 hover:opacity-100 transition-opacity'>
+              <span>✉️</span>
+              <span>{contactInfo.email}</span>
+            </a>
+            <div className='flex items-start gap-3 opacity-70'>
+              <span>📍</span>
+              <span className='text-sm'>{contactInfo.address}</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* LINK FOOTER */}
-      <div className='right lg:w-2/3 flex xs:flex-col md:flex-row xs:gap-10 md:gap-0 md:justify-between'>
-        <FooterCard title='Company' link1='About' link2='Career' link3='Mobile' />
-        <FooterCard title='Contact' link1='Why Travlog?' link2='Partner with us' link3='FAQ’s' link4='Blog' />
-        <FooterCard title='Meet Us' link1='+00 92 1234 56789' link2='info@travlog.com' link3='205. R Street, New York BD23200' />
+      {/* Bottom Bar */}
+      <div className='border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4'>
+        <p className='opacity-70 text-sm text-center md:text-left'>
+          © {new Date().getFullYear()} KeralaTour.info | Powered by <a href='https://keralatour.info' target='_blank' rel='noopener noreferrer' className='hover:text-[#F85E9F]'>Before Holiday</a>
+        </p>
+        <div className='flex gap-6 text-sm opacity-70'>
+          <Link href='/privacy-policy' className='hover:opacity-100 transition-opacity'>Privacy Policy</Link>
+          <Link href='/terms-and-conditions' className='hover:opacity-100 transition-opacity'>Terms & Conditions</Link>
+        </div>
       </div>
     </footer>
-  )
-}
-
-interface FooterCardProps {
-  title: string;
-  link1: string;
-  link2: string;
-  link3: string;
-  link4?: string;
-}
-
-const FooterCard = ({title, link1, link2, link3, link4} : FooterCardProps) => {
-  return (
-    <div className='flex flex-col gap-4'>
-      <h3 className='text-2xl font-bold'>{title}</h3>
-      <ul className='flex flex-col gap-4 mt-4'>
-        <Link className='opacity-70' href='/'>{link1}</Link>
-        <Link className='opacity-70' href='/'>{link2}</Link>
-        <Link className='opacity-70' href='/'>{link3}</Link> 
-        {link4 && <Link className='opacity-70' href='/'>{link4}</Link>} 
-      </ul>                  
-    </div>  
   )
 }
 
